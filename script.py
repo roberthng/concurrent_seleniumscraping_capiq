@@ -38,7 +38,7 @@ class SeleniumDriver(object):
         chrome_options.add_experimental_option("prefs",p)
         chrome_options.add_experimental_option('excludeSwitches', ['enable-logging'])
         chrome_options.add_argument('--no-sandbox')
-        #chrome_options.add_argument("--headless") #if headless
+        chrome_options.add_argument("--headless") #for headless browser, please uncomment
         self.driver = webdriver.Chrome(
             executable_path=self.driver_path,
             options=chrome_options
@@ -92,13 +92,6 @@ def crawl_cust_pages(bank_dict,num,filename,browser):
     return Bank_CustPD
 
 if __name__ == "__main__":
-
-    # # headless mode?
-    # headless = False
-    # if len(sys.argv) > 1:
-    #     if sys.argv[1] == "headless":
-    #         print("Running in headless mode")
-    #         headless = True
 
     # set variables
     start_time = time()
